@@ -89,7 +89,7 @@ class CKWebRequest {
 
     func perform(request: URLRequest, completionHandler: @escaping ([String: Any]?, Error?) -> Void) -> URLSessionTask? {
         
-        let session = URLSession.shared
+        let session = URLSession(configuration: URLSessionConfiguration.default)
        
         let requestCompletionHandler:  (Data?, URLResponse?, Error?) -> Swift.Void = { (data, response, networkError) in
             if let networkError = networkError {
